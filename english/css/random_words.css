@@ -9,13 +9,18 @@
 
 #word {
     color: white;
+    font-family: cursive;
     font-size: 10vw;
+    text-decoration: none;
 }
 
-#svg-refresh{
+#home-link {
+    margin-right: auto;
+}
+
+#svg-refresh {
     height: 70px;
     width: 70px;
-    fill: white;
 }
 
 #btn-next {
@@ -24,9 +29,11 @@
     height: 100%;
 }
 
-header{
-    background: tomato;
+header {
+    display: flex;
     height: 70px;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 main {
@@ -38,7 +45,6 @@ main {
 }
 
 footer {
-    background: antiquewhite;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -46,4 +52,38 @@ footer {
     max-height: 200px;
     min-height: 100px;
     height: 20vh;
+}
+
+#dic-group {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 270px;
+    min-height: 170px;
+    height: calc(20vh + 70px);
+}
+
+#dic-group a {
+    height: 70px;
+    margin-right: 5px;
+}
+
+.icon-header {
+    height: 60px;
+    width: 60px;
+}
+
+.background-theme {
+    background: tomato;
+}
+
+.fill-theme {
+    fill: tomato;
+}
+
+.stroke-theme {
+    stroke: tomato;
 }
