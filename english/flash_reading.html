@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Title</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/flash_reading.css">
+</head>
+<body>
+
+<div id="content">
+    <header>
+        <a id="home-link" href="/useful_pages">
+            <svg class="icon-header" id="svg-home" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 viewBox="0 0 32 32">
+                <path d="M 16 3 L 3 18 L 7 18 L 7 30 L 12.5 30 L 12.5 20 L 19.5 20 L 19.5 30 L 25 30 L 25 18 L 30 18 Z"
+                      stroke-width="2"
+                      stroke="white"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                      fill="white"></path>
+            </svg>
+        </a>
+
+        <div id="page-changes">
+            <svg class="icon-header" id="btn-edit" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 viewBox="0 0 32 32">
+                <path d="M 3 29 L 3 21 L 11 29 Z" stroke-width="2"
+                      stroke="white"
+                      fill="white"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"></path>
+                <path d="M 3 21 L 11 29 L 29 11 L 21 3 Z"
+                      stroke-width="2"
+                      stroke="white"
+                      fill="white"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"></path>
+                <path d="M 4 21 L 11 28"
+                      stroke-width="1.5"
+                      stroke="steelblue"
+                ></path>
+            </svg>
+
+            <svg class="icon-header hide" id="btn-flash-page" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 viewBox="0 0 32 32">
+                <rect x="6" y="6" width="25" height="16" fill="white" stroke="white"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"></rect>
+                <rect x="2" y="10" width="25" height="16" fill="none" stroke="white"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"></rect>
+            </svg>
+        </div>
+    </header>
+    <main>
+        <div id="flash-page">
+            <h2 id="word"></h2>
+            <div id="dic-group">
+                <a id="dic-eng" href="#" target="_blank">
+                    <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         viewBox="0 0 32 32">
+                        <path class="fill-theme stroke-theme" d="M 2 14 L 14 22 L 30 14 L 18 6 Z"
+                              stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path fill="white" class="stroke-theme"
+                              d="M 2 14 L 14 22 L 30 14 L 30 20 L 14 28 L 2 20 Z"
+                              stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                        <text fill="white" x="16" y="16" text-anchor="middle" font-family="cursive" font-size="14px"
+                              transform="rotate(50 13.4,12)">E
+                        </text>
+                    </svg>
+                </a>
+
+                <a id="dic-jap" href="#" target="_blank">
+                    <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         viewBox="0 0 32 32">
+                        <path class="fill-theme stroke-theme" d="M 2 14 L 14 22 L 30 14 L 18 6 Z"
+                              stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path fill="white" class="stroke-theme"
+                              d="M 2 14 L 14 22 L 30 14 L 30 20 L 14 28 L 2 20 Z"
+                              stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                        <text fill="white" x="16" y="16" text-anchor="middle" font-family="cursive" font-size="14px"
+                              transform="rotate(50 13.4,12)">J
+                        </text>
+                    </svg>
+                </a>
+            </div>
+            <h4 id="index-words">0/0</h4>
+        </div>
+        <div class="hide" id="edit-page">
+            <h4 style="color: white;">Text</h4>
+            <textarea cols="40" rows="10" id="all-text"></textarea>
+        </div>
+    </main>
+    <footer id="footer">
+        <div id="range-content">
+            <input type="range" id="words-pos" value="0">
+        </div>
+        <div id="controller-content">
+            <h4 id="wpm-selector">50<span>wpm</span></h4>
+            <svg class="icon-header" id="start" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 viewBox="0 0 32 32">
+                <circle cx="16" cy="16" r="14" fill="white"></circle>
+                <path d="M 11 8 L 24 16 L 11 24 Z" stroke-width="2"
+                      stroke="steelblue"
+                      fill="steelblue"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"></path>
+            </svg>
+            <svg class="icon-header hide" id="stop" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 viewBox="0 0 32 32">
+                <circle cx="16" cy="16" r="14" fill="white"></circle>
+                <rect x="9" y="9" width="14" height="14" stroke-width="2"
+                      stroke="steelblue"
+                      fill="steelblue"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"></rect>
+            </svg>
+            <svg class="icon-header" id="refresh" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 viewBox="0 0 32 32">
+                <path fill="white"
+                      d="M 16 4 C 10.886719 4 6.617188 7.160156 4.875 11.625 L 6.71875 12.375 C 8.175781 8.640625 11.710938 6 16 6 C 19.242188 6 22.132813 7.589844 23.9375 10 L 20 10 L 20 12 L 27 12 L 27 5 L 25 5 L 25 8.09375 C 22.808594 5.582031 19.570313 4 16 4 Z M 25.28125 19.625 C 23.824219 23.359375 20.289063 26 16 26 C 12.722656 26 9.84375 24.386719 8.03125 22 L 12 22 L 12 20 L 5 20 L 5 27 L 7 27 L 7 23.90625 C 9.1875 26.386719 12.394531 28 16 28 C 21.113281 28 25.382813 24.839844 27.125 20.375 Z"></path>
+            </svg>
+        </div>
+    </footer>
+</div>
+
+
+<script>
+    let timer = null;
+    let words = [];
+    let current_index = 0;
+    const word_el = document.getElementById('word');
+    const words_range_el = document.getElementById('words-pos');
+    const index_words_el = document.getElementById('index-words');
+    const wpm_el = document.getElementById('wpm-selector');
+    const wpm_selector = {
+        value: 50,
+        selection: [
+            50, 75, 100, 150, 200, 250, 300, 350, 400, 450, 500
+        ],
+        current: 0
+    };
+
+    function show_current_word() {
+        document.getElementById('dic-eng').href = "https://www.dictionary.com/browse/" + words[current_index] + "?s=ts";
+        document.getElementById('dic-jap').href = "https://ejje.weblio.jp/content/" + words[current_index];
+        word_el.innerText = words[current_index];
+        index_words_el.innerText = parseInt(current_index) + 1 + '/' + words.length;
+
+    }
+
+    function start_flash() {
+        if (timer != null) return;
+
+
+        timer = setInterval(function () {
+            if (current_index >= words.length) {
+                click_stop();
+                return;
+            }
+            show_current_word();
+            current_index++;
+            words_range_el.value = current_index;
+
+        }, calc_msec_by_wpm(wpm_selector.value));
+    }
+
+    function stop_flash() {
+        clearInterval(timer);
+        timer = null;
+    }
+
+    function refresh() {
+        stop_flash();
+        const text = document.getElementById('all-text').value;
+        words = text.split(/\r\n|\r|\n| /);
+        current_index = 0;
+        words_range_el.value = current_index;
+        words_range_el.max = words.length - 1;
+        show_current_word();
+        document.getElementById('word').innerText = words[current_index++];
+    }
+
+    function calc_msec_by_wpm(wpm) {
+        return 60000 / wpm;
+    }
+
+    function click_start() {
+        document.getElementById('start').classList.add('hide');
+        document.getElementById('stop').classList.remove('hide');
+        start_flash();
+    }
+
+    function click_stop() {
+        document.getElementById('start').classList.remove('hide');
+        document.getElementById('stop').classList.add('hide');
+        stop_flash();
+    }
+
+    function click_refresh() {
+        click_stop();
+        refresh();
+    }
+
+    function is_stop() {
+        return timer === null;
+    }
+
+    function wpm_changed() {
+        const is_s = is_stop();
+        click_stop();
+        if (is_s === false)
+            click_start();
+    }
+
+    function words_pos_input() {
+        click_stop();
+        current_index = words_range_el.value;
+        show_current_word();
+    }
+
+    function words_pos_changed() {
+        current_index = words_range_el.value;
+    }
+
+    function click_wpm() {
+        const next_index = wpm_selector.current + 1;
+        wpm_selector.current = wpm_selector.selection.length <= next_index ? 0 : next_index;
+        wpm_selector.value = wpm_selector.selection[wpm_selector.current];
+        wpm_el.innerHTML = wpm_selector.value + '<span>wpm</span>';
+        wpm_changed();
+    }
+
+    function show_flash_page() {
+        document.getElementById('flash-page').classList.remove('hide');
+        document.getElementById('btn-edit').classList.remove('hide');
+        document.getElementById('edit-page').classList.add('hide');
+        document.getElementById('btn-flash-page').classList.add('hide');
+        document.getElementById('controller-content').classList.remove('hide');
+    }
+
+    function show_edit_page() {
+        click_stop();
+        document.getElementById('flash-page').classList.add('hide');
+        document.getElementById('btn-edit').classList.add('hide');
+        document.getElementById('edit-page').classList.remove('hide');
+        document.getElementById('btn-flash-page').classList.remove('hide');
+        document.getElementById('controller-content').classList.add('hide');
+    }
+
+    document.getElementById('start').onclick = click_start;
+    document.getElementById('stop').onclick = click_stop;
+    document.getElementById('refresh').onclick = click_refresh;
+    document.getElementById('all-text').onchange = click_refresh;
+    document.getElementById('wpm-selector').onchange = wpm_changed;
+    document.getElementById('words-pos').oninput = words_pos_input;
+    document.getElementById('words-pos').onchange = words_pos_changed;
+
+    document.getElementById('btn-edit').onclick = show_edit_page;
+
+    document.getElementById('btn-flash-page').onclick = show_flash_page;
+    document.getElementById('wpm-selector').onclick = click_wpm;
+
+    document.getElementById('dic-eng').onclick = click_stop;
+    document.getElementById('dic-jap').onclick = click_stop;
+</script>
+</body>
+</html>

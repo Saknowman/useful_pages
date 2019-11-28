@@ -1,0 +1,32 @@
+header {
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+main {
+    height: calc(100% - 70px);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 200px;
+    min-height: 100px;
+    height: 20vh;
+}
+
+#content {
+    height: calc(100vh - 20vh);
+}
+
+.hide {
+    display: none;
+}
+
+.hide * {
+    display: none;
+}

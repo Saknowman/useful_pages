@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#word {
+    font-size: 10vw;
+}
+
+#all-text {
+    width: 100%;
+    background: beige;
+}
+
+header {
+    background: steelblue;
+}
+
+footer {
+    background: steelblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header #page-changes {
+    margin: 0 10px;
+    width: 60px;
+    height: 60px;
+}
+
+main {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+
+#word {
+    color: white;
+    font-size: 10vw;
+}
+
+#flash-page {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+
+#home-link {
+    margin-right: auto;
+}
+
+#range-content {
+    width: 80%;
+}
+
+#words-pos {
+    width: 100%;
+}
+
+#controller-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 95%;
+    height: 60px;
+}
+
+#controller-content #refresh {
+    margin-left: 10px;
+}
+
+#controller-content #wpm-selector {
+    margin-right: auto;
+    align-self: flex-end;
+    font-size: 24px;
+    color: white;
+}
+
+#controller-content #wpm-selector span {
+    font-size: 16px;
+}
+
+.icon-header {
+    width: 60px;
+    height: 60px;
+}
+
+#dic-group {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 270px;
+    min-height: 170px;
+    height: calc(20vh + 70px);
+}
+
+#dic-group a {
+    height: 70px;
+    margin-right: 5px;
+}
+
+#index-words {
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+    left: 10px;
+    bottom: 0;
+    width: 100%;
+    max-height: 240px;
+    min-height: 140px;
+    height: calc(20vh + 40px);
+    font-size: 24px;
+    color: white;
+
+}
+
+.background-theme {
+    background: steelblue;
+}
+
+.fill-theme {
+    fill: steelblue;
+}
+
+.stroke-theme {
+    stroke: steelblue;
+}

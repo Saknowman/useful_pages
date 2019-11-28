@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/random_words.css">
 </head>
 <body>
@@ -39,7 +40,7 @@
     <main>
         <h2 id="word"></h2>
         <div id="dic-group">
-            <a id="dic-eng" href="#">
+            <a id="dic-eng" href="#" target="_blank">
                 <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                      viewBox="0 0 32 32">
                     <path class="fill-theme stroke-theme" d="M 2 14 L 14 22 L 30 14 L 18 6 Z"
@@ -53,7 +54,7 @@
                 </svg>
             </a>
 
-            <a id="dic-jap" href="#">
+            <a id="dic-jap" href="#" target="_blank">
                 <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                      viewBox="0 0 32 32">
                     <path class="fill-theme stroke-theme" d="M 2 14 L 14 22 L 30 14 L 18 6 Z"
@@ -81,65 +82,67 @@
 <script src="js/english_words.js"></script>
 <script src="../js/utils/random.js"></script>
 <script>
-    let current_index = -1;
+    window.onload = function () {
+        let current_index = -1;
 
-    function refresh() {
-        random_sort(words);
-        current_index = -1;
-        next_click();
-    }
-
-    function next_word() {
-        if (current_index === words.length - 1)
+        function refresh() {
+            random_sort(words);
             current_index = -1;
-        return words[++current_index];
-    }
+            next_click();
+        }
 
-    function previous_word() {
-        if (current_index === 0)
-            current_index = words.length;
-        return words[--current_index];
-    }
+        function next_word() {
+            if (current_index === words.length - 1)
+                current_index = -1;
+            return words[++current_index];
+        }
 
-    function show_word(word) {
-        document.getElementById('word').innerText = word;
-        document.getElementById('dic-eng').href = "https://www.dictionary.com/browse/" + word + "?s=ts";
-        document.getElementById('dic-jap').href = "https://ejje.weblio.jp/content/" + word;
-    }
+        function previous_word() {
+            if (current_index === 0)
+                current_index = words.length;
+            return words[--current_index];
+        }
 
-    function refresh_click() {
-        refresh();
-        change_theme();
-    }
+        function show_word(word) {
+            document.getElementById('word').innerText = word;
+            document.getElementById('dic-eng').href = "https://www.dictionary.com/browse/" + word + "?s=ts";
+            document.getElementById('dic-jap').href = "https://ejje.weblio.jp/content/" + word;
+        }
 
-    function next_click() {
-        show_word(next_word());
-    }
+        function refresh_click() {
+            refresh();
+            change_theme();
+        }
 
-    function previous_click() {
-        show_word(previous_word());
-    }
+        function next_click() {
+            show_word(next_word());
+        }
 
-    function change_theme() {
-        const theme_colors = [
-            '#25383c', '#4863A0', '#566d7e', '#008080', '#4e8975', '#617c58', '#254117', '#eac117', '#e8a317', 'tomato', '#f87217', '#e55451', '#810541', '#4b0082'
-        ];
-        const color = theme_colors[random_int(0, theme_colors.length)];
-        const theme_classes = ['fill', 'background', 'stroke'];
-        for (let i = 0; i < theme_classes.length; ++i) {
-            const theme_els = document.getElementsByClassName(theme_classes[i] + '-theme');
-            for (let j = 0; j < theme_els.length; ++j) {
-                theme_els[j].style[theme_classes[i]] = color;
+        function previous_click() {
+            show_word(previous_word());
+        }
+
+        function change_theme() {
+            const theme_colors = [
+                '#25383c', '#4863A0', '#566d7e', '#008080', '#4e8975', '#617c58', '#254117', '#eac117', '#e8a317', 'tomato', '#f87217', '#e55451', '#810541', '#4b0082'
+            ];
+            const color = theme_colors[random_int(0, theme_colors.length)];
+            const theme_classes = ['fill', 'background', 'stroke'];
+            for (let i = 0; i < theme_classes.length; ++i) {
+                const theme_els = document.getElementsByClassName(theme_classes[i] + '-theme');
+                for (let j = 0; j < theme_els.length; ++j) {
+                    theme_els[j].style[theme_classes[i]] = color;
+                }
             }
         }
+
+
+        document.getElementById('svg-refresh').onclick = refresh_click;
+        document.getElementById('svg-previous').onclick = previous_click;
+        document.getElementById('btn-next').onclick = next_click;
+
+        refresh();
     }
-
-
-    document.getElementById('svg-refresh').onclick = refresh_click;
-    document.getElementById('svg-previous').onclick = previous_click;
-    document.getElementById('btn-next').onclick = next_click;
-
-    refresh();
 </script>
 </body>
 </html>
